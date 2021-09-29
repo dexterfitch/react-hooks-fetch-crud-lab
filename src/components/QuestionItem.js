@@ -9,7 +9,7 @@ function QuestionItem({ question, questions, setQuestions, questionNumber }) {
     </option>
   ));
 
-  const handleDeleteFunction = (id) => {
+  const handleDeleteFunction = () => {
     fetch("http://localhost:4000/questions/" + id, {
       method: 'DELETE'
     })
@@ -30,7 +30,7 @@ function QuestionItem({ question, questions, setQuestions, questionNumber }) {
         Correct Answer:
         <select defaultValue={correctIndex}>{options}</select>
       </label>
-      <button onClick={() => handleDeleteFunction(id)}>Delete Question</button>
+      <button onClick={handleDeleteFunction}>Delete Question</button>
     </li>
   );
 }
